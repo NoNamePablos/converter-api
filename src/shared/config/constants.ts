@@ -7,6 +7,11 @@ export const CURRENCY_LABELS: Record<Currency, string> = {
   RUB: 'Russian Ruble'
 }
 
+export interface Select {
+  label: string
+  value: string
+}
+
 export const DEFAULT_CURRENCY: Currency = 'USD'
 
 export const API_URL = 'https://status.neuralgeneration.com/api/currency'

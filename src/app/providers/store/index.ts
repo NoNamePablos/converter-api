@@ -2,8 +2,13 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { Currency } from '@/shared/config/constants'
 import { DEFAULT_CURRENCY } from '@/shared/config/constants'
-import type { CurrencyRates } from '@/shared/api/currencyApi'
 import { currencyApi } from '@/shared/api/currencyApi'
+
+interface CurrencyRates {
+  [key: string]: {
+    [key: string]: number
+  }
+}
 
 export const useCurrencyStore = defineStore('currency', () => {
   const baseCurrency = ref<Currency>(DEFAULT_CURRENCY)
